@@ -1,9 +1,9 @@
 services:
   jackett-mobile:
-    image: youruser/jackett-mobile:latest
+    image: itsfernn/jackett-mobile:latest
     container_name: jackett-mobile
     ports:
-      - "5000:5000"
+      - "9118:9118"
     environment:
       # Point this at your Jackett instance
       - JACKETT_URL=http://jackett:9117

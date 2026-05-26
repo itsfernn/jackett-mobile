@@ -30,6 +30,11 @@ async def index():
     return html.replace("{{APP_TITLE}}", APP_TITLE)
 
 
+@app.get("/favicon.png")
+async def favicon():
+    return FileResponse("static/favicon.png")
+
+
 def _extract(r: dict) -> dict:
     return {
         "title": r.get("Title"),

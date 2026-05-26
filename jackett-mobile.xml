@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>jackett-mobile</Name>
+  <Repository>itsfernn/jackett-mobile:latest</Repository>
+  <Registry>https://hub.docker.com/r/itsfernn/jackett-mobile</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/itsfernn/jackett-mobile/issues</Support>
+  <Project>https://github.com/itsfernn/jackett-mobile</Project>
+  <Overview>A lightweight mobile-friendly web interface for Jackett. Search torrents, download directly, or send them to your server's black hole.</Overview>
+  <Category>MediaApp:Video MediaApp:Audio</Category>
+  <WebUI>http://[IP]:[PORT:9118]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/itsfernn/unraid-templates/main/templates/jackett-mobile.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/itsfernn/jackett-mobile/main/logo.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText/>
+  <DonateLink/>
+  <Description>A lightweight mobile-friendly web interface for Jackett that lets you search torrents, download directly, or send them to your server's black hole. Supports filtering by specific indexers, sorting by seeders/peers/size/date, and running multiple instances for different content categories.</Description>
+  <Requires>
+    <Requires>jackett</Requires>
+  </Requires>
+  <Config Name="Port" Target="9118" Default="9118" Mode="tcp" Description="Web UI port" Type="Port" Display="always" Required="true" Mask="false">9118</Config>
+  <Config Name="Jackett URL" Target="JACKETT_URL" Default="http://192.168.1.100:9117" Mode="" Description="Base URL of your Jackett instance (e.g. http://192.168.1.100:9117)" Type="Variable" Display="always" Required="true" Mask="false">http://192.168.1.100:9117</Config>
+  <Config Name="Jackett API Key" Target="JACKETT_API_KEY" Default="" Mode="" Description="Your Jackett API key" Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="Indexers" Target="INDEXERS" Default="all" Mode="" Description="Indexer filter expression. Examples: \"all\", \"1337x\", \"1337x,audiobookbay\", \"tag:group1\", \"!type:private\"" Type="Variable" Display="always" Required="false" Mask="false">all</Config>
+  <Config Name="App Title" Target="APP_TITLE" Default="Jackett Mobile" Mode="" Description="Page title shown in header and browser tab" Type="Variable" Display="always" Required="false" Mask="false">Jackett Mobile</Config>
+</Container>
