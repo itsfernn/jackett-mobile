@@ -34,6 +34,22 @@ async def index():
 async def favicon():
     return FileResponse("static/favicon.png")
 
+@app.get("/manifest.json")
+async def manifest():
+    return FileResponse("static/manifest.json")
+
+@app.get("/service-worker.js")
+async def service_worker():
+    return FileResponse("static/service-worker.js")
+
+@app.get("/icon-192.png")
+async def icon_192():
+    return FileResponse("static/icon-192.png")
+
+@app.get("/icon-512.png")
+async def icon_512():
+    return FileResponse("static/icon-512.png")
+
 
 def _extract(r: dict) -> dict:
     return {
