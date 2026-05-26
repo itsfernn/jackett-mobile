@@ -1,0 +1,16 @@
+services:
+  jackett-mobile:
+    image: youruser/jackett-mobile:latest
+    container_name: jackett-mobile
+    ports:
+      - "5000:5000"
+    environment:
+      # Point this at your Jackett instance
+      - JACKETT_URL=http://jackett:9117
+      # Required: your Jackett API key
+      - JACKETT_API_KEY=your_api_key_here
+      # Indexer filter: "all", single tracker ID, comma-separated, tag:..., etc.
+      - INDEXERS=all
+      # Custom page title
+      - APP_TITLE=Jackett Mobile
+    restart: unless-stopped
